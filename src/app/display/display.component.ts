@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeService } from '../poke.service';
-import { Observable } from 'rxjs';
-import { Poke } from '../models/poke';
 import { Pokemon } from '../models/pokemon';
 
 @Component({
@@ -10,12 +8,12 @@ import { Pokemon } from '../models/pokemon';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  pokes:Poke[] = [];
   pokemon: Pokemon[] = [];
   constructor(private pokeService : PokeService) { }
+  title = "Glen's Pokemon Adventure made Exclusively for Blink UX";
 
   ngOnInit() {
-    this.getPokes();
+    // this.getPokes();
   }
 
   getPokes(){

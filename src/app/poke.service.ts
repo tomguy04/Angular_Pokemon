@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, tap, catchError } from 'rxjs/operators';
-import { Observable,of } from 'rxjs';
 
-import { Poke } from './models/poke';
 import { Pokemon } from './models/pokemon';
 
 @Injectable({
@@ -13,6 +11,7 @@ export class PokeService {
   private baseUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
   private baseSpriteUrl: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
   pokemon : Pokemon[]=[];
+  private baseInfoUrl : string = 'https://pokemon.wikia.com/wiki/';
 
   /**
    * Inject the HTTP service.
@@ -32,6 +31,7 @@ export class PokeService {
               i + offset,
               `${this.baseSpriteUrl}${i+1}.png`,
               item.results[i].name,
+              `${this.baseInfoUrl}${item.results[i].name}`
             )
             this.pokemon.push(pokeObj);
           }

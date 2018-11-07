@@ -8,3 +8,37 @@
     
     /* background-size:  */
 }
+
+#title{
+    margin-left:100px;
+    font-size: 40px;
+    color: white;
+}
+
+.card{
+    display: inline-block;
+    vertical-align: top;
+    width : 25%
+}
+
+#pokecard{
+    display: inline-block;
+    vertical-align: top;
+    width : 25%;
+}
+
+.jumbotron{
+    width : 100%;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .child {
+    flex: 1 0 21%; /* explanation below */
+    margin: 5px;
+    height: 100px;
+    background-color: blue;
+  }

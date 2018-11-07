@@ -11,15 +11,30 @@
 </head>
 <body>
   <div id = 'wrapper'>
-    <div id = 'header'>{{title}}</div>
+    <div id = 'header'><div id='title'>{{title}}</div></div>
     <div class="container">
+
       <input [(ngModel)]="searchText" placeholder="Find your Pokemon">
-      <div *ngFor = 'let poke of pokemon | filter : searchText'>
-      {{poke.name}}
-      <img src = {{poke.sprite}}>
-      <a href = {{poke.info}}>More information</a>
+      <div class = 'jumbotron'>
+          <div class="card" *ngFor = 'let poke of pokemon | filter : searchText'>
+              <div class="card-body">
+                <h5 class="card-title">{{poke.name}}</h5>
+                <img class="card-img-top" src={{poke.sprite}} alt="Card image cap">
+                <a href = {{poke.info}} class="btn btn-primary">More information</a>
+              </div>
+                  <!-- <img src = {{poke.sprite}}>
+                  <p>{{poke.name}}</p>
+                  <p><a href = {{poke.info}}>More information</a></p> -->
+          </div>
+ 
+        <!-- <div class = 'row'>
+          <div *ngFor = 'let poke of pokemon | filter : searchText'>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><img src = {{poke.sprite}}></div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{poke.name}}</div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><a href = {{poke.info}}>More information</a></div>
+          </div>
+        </div> -->
       </div>
-    
     </div>
   </div>
   <!-- more bootstrap components -->

@@ -13,7 +13,7 @@ export class DisplayComponent implements OnInit {
   title = "Glen's Pokemon Adventure made Exclusively for Blink UX";
 
   ngOnInit() {
-    // this.getPokes();
+    this.getPokes();
   }
 
   getPokes(){
